@@ -19,4 +19,3 @@ class Stats:
     @staticmethod
     def mode(lst: list) -> Union[int, float]:
         return Counter(lst).most_common(1)[0][0]
-
