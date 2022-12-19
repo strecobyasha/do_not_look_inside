@@ -19,3 +19,8 @@ class Stats:
     @staticmethod
     def mode(lst: list) -> Union[int, float]:
         return Counter(lst).most_common(1)[0][0]
+
+    @classmethod
+    def standard_deviation(cls, lst: list) -> Union[int, float]:
+        m = cls.mean(lst)
+        return (sum([(x - m) ** 2 for x in lst]) / len(lst)) ** (1/2)
