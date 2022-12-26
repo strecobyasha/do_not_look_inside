@@ -20,5 +20,8 @@ class MongoClient:
     def insert_items(self, coll_name: str, data: list[dict]):
         return self.collections[coll_name].insert_many(data)
 
+    def find_items(self, coll_name: str, params: dict):
+        return self.collections[coll_name].find({}, params)
+
     def truncate_collection(self, coll_name: str):
         self.collections[coll_name].delete_many({})
